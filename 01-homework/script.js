@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const oilPrice = 15.678, 
     gasPrice = 123.965, 
