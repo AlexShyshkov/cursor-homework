@@ -11,7 +11,7 @@ let minPrice = Math.min(oilPrice, gasPrice, goldPrice);
 let totalPrice = oilPrice + gasPrice + goldPrice;
 let roundPricesSum = Math.floor(oilPrice) + Math.floor(gasPrice) + Math.floor(goldPrice);
 let roundToHundredPricesSum = Math.round(totalPrice / 100) * 100;
-let isEvenTotalPrice = (roundPricesSum % 2 == 0) ? true : false;
+let isEvenTotalPrice = (roundPricesSum % 2 === 0) ? true : false;
 let restAfterShoping = shoppingBudget - totalPrice;
 let averagePrice = (totalPrice / 3).toFixed(2);
 let clientDiscount = Math.ceil(Math.random()*100);
