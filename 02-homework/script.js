@@ -1,7 +1,7 @@
 'use strict';
 
-let firstNumber = +prompt('Enter first numder', ''),
-    secondNumber = +prompt('Enter second number', ''),
+let firstNumber = parseInt(prompt('Enter first numder', '')),
+    secondNumber = parseInt(prompt('Enter second number', '')),
     isSkipPairNumbers = confirm('Do you want to skip the pair numbers?'),
     result = 0;
 
