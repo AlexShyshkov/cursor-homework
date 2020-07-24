@@ -23,5 +23,13 @@ function getPow(value, power) {
     return result;
 }
 
-document.writeln(`Функція №1: ${getMaxDigit(123845)}`);
-document.writeln(`Функція №2: ${getPow(3, 3)}`);
+function nameFormatingTool(name) {
+    let formatedName = name.toLowerCase();
+    return formatedName.charAt(0).toUpperCase() + formatedName.substring(1);
+}
+
+document.writeln(`
+    Функція №1: ${getMaxDigit(123845)}<br>
+    Функція №2: ${getPow(3, 3)}<br>
+    Функція №3: ${nameFormatingTool("vAsYA")}<br>
+`);
