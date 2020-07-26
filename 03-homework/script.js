@@ -47,6 +47,16 @@ function countLetter(letter, text) {
     return result;
 }
 
+function convertCurrency(sum) {
+    let convertedSum = null;
+    if(sum.includes("$")) {
+        convertedSum = (parseInt(sum) * 27.85) + "UAH";
+    } else if(sum.toUpperCase().includes("UAH")) {
+        convertedSum = (parseInt(sum) / 27.95).toFixed(2) + "$";
+    }
+    return convertedSum;
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
@@ -54,4 +64,5 @@ document.writeln(`
     Функція №4: ${getNettoSalary(1000)}<br>
     Функція №5: ${getRandomDigit(10, 30)}<br>
     Функція №6: ${countLetter("b", "Blablablacar")}<br>
+    Функція №7: ${convertCurrency("1000uah")}<br>
 `);
