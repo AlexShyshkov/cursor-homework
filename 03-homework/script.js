@@ -28,8 +28,13 @@ function nameFormatingTool(name) {
     return formatedName.charAt(0).toUpperCase() + formatedName.substring(1);
 }
 
+function getNettoSalary(payment, tax=19.5) {
+    return payment - (payment / 100 * tax);
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
     Функція №3: ${nameFormatingTool("vAsYA")}<br>
+    Функція №4: ${getNettoSalary(1000)}<br>
 `);
