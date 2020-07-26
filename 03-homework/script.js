@@ -65,6 +65,25 @@ function getRandomPassword(symbols = 8) {
     return password.join('');
 }
 
+function deleteLetters(letter, text) {
+    let newText = text.toLowerCase().split('');
+    for(let i = 0; i < newText.length; i++) {
+        if(newText[i] == letter.toLowerCase()){
+            newText.splice(i, 1);
+        }
+    }
+    return newText.join('');
+}
+
+function isPalyndrom(text) {
+    let isPalyndrom = false;
+    let reversedText = text.toLowerCase().split('').reverse().join('');
+    if(reversedText === text){
+        isPalyndrom = true;
+    }
+    return isPalyndrom;
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
@@ -74,4 +93,6 @@ document.writeln(`
     Функція №6: ${countLetter("b", "Blablablacar")}<br>
     Функція №7: ${convertCurrency("1000uah")}<br>
     Функція №8: ${getRandomPassword(10)}<br>
+    Функція №9: ${deleteLetters("v", "kjdhjfddbfefvsjd vbj dvdfg ssdvbdhv")}<br>
+    Функція №10: ${isPalyndrom("madam")}<br>
 `);
