@@ -57,6 +57,14 @@ function convertCurrency(sum) {
     return convertedSum;
 }
 
+function getRandomPassword(symbols = 8) {
+    let password = [];
+    for(let i = 0; i < symbols; i++) {
+        password.push(Math.round(Math.random() * 9));
+    }
+    return password.join('');
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
@@ -65,4 +73,5 @@ document.writeln(`
     Функція №5: ${getRandomDigit(10, 30)}<br>
     Функція №6: ${countLetter("b", "Blablablacar")}<br>
     Функція №7: ${convertCurrency("1000uah")}<br>
+    Функція №8: ${getRandomPassword(10)}<br>
 `);
