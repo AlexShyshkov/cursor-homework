@@ -32,9 +32,26 @@ function getNettoSalary(payment, tax=19.5) {
     return payment - (payment / 100 * tax);
 }
 
+function getRandomDigit(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function countLetter(letter, text) {
+    let result = 0;
+    text = text.toLowerCase();
+    for(let i = 0; i < text.length; i++) {
+        if(text[i] == letter) {
+            result++;
+        }
+    }
+    return result;
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
     Функція №3: ${nameFormatingTool("vAsYA")}<br>
     Функція №4: ${getNettoSalary(1000)}<br>
+    Функція №5: ${getRandomDigit(10, 30)}<br>
+    Функція №6: ${countLetter("b", "Blablablacar")}<br>
 `);
