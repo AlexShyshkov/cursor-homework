@@ -84,6 +84,17 @@ function isPalyndrom(text) {
     return isPalyndrom;
 }
 
+function deleteDuplicateLetter(text) {
+    text.toLowerCase().split('');
+    let newText = "";
+    for(let i = 0; i < text.length; i++){
+        if(text.indexOf(text[i]) === text.lastIndexOf(text[i])){
+            newText += text[i];
+        }
+    }
+    return newText;
+}
+
 document.writeln(`
     Функція №1: ${getMaxDigit(123845)}<br>
     Функція №2: ${getPow(3, 3)}<br>
@@ -95,4 +106,5 @@ document.writeln(`
     Функція №8: ${getRandomPassword(10)}<br>
     Функція №9: ${deleteLetters("v", "kjdhjfddbfefvsjd vbj dvdfg ssdvbdhv")}<br>
     Функція №10: ${isPalyndrom("madam")}<br>
+    Функція №11: ${deleteDuplicateLetter("abrakadabra")}<br>
 `);
