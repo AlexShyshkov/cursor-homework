@@ -22,7 +22,7 @@ function getPairs(arr) {
 function addThemes(group, topics) {
     let groupTopic = [];
     for(let i = 0; i < group.length; i++) {
-        groupTopic[i] = [group[i].join(" i "), topics[i]];
+        groupTopic[i] = new Array(group[i].join(" i "), topics[i]);
     }
     return groupTopic;
 }
