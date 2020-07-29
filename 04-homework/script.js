@@ -19,6 +19,16 @@ function getPairs(arr) {
     return studentPairs;
 }
 
+function addThemes(group, topics) {
+    let groupTopic = [];
+    for(let i = 0; i < group.length; i++) {
+        groupTopic[i] = [group[i].join(" i "), topics[i]];
+    }
+    return groupTopic;
+}
+
 const pairs = getPairs(students);
+const groupTheme = addThemes(pairs, themes);
 
 console.log(pairs);
+console.log(groupTheme);
