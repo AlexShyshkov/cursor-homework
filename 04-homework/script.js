@@ -37,10 +37,20 @@ function addMarks(studentsList, marksList) {
     return studentsMarks;
 }
 
+function addRandomMark(group, min, max) {
+    let groupWithRandomMark = [];
+    for (let i = 0; i < group.length; i++) {
+        groupWithRandomMark[i] = new Array(group[i][0], group[i][1], Math.round(Math.random() * (max - min) + min));
+    }
+    return groupWithRandomMark;
+}
+
 const pairs = getPairs(students);
 const groupTheme = addThemes(pairs, themes);
 const groupMarks = addMarks(students, marks);
+let randomMark = addRandomMark(groupTheme, 1, 5);
 
 console.log(pairs);
 console.log(groupTheme);
 console.log(groupMarks);
+console.log(randomMark);
