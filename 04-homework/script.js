@@ -21,7 +21,7 @@ function getPairs(arr) {
 
 function addThemes(group, topics) {
     let groupTopic = [];
-    for(let i = 0; i < group.length; i++) {
+    for (let i = 0; i < group.length; i++) {
         groupTopic[i] = new Array(group[i].join(" i "), topics[i]);
     }
     return groupTopic;
@@ -30,7 +30,9 @@ function addThemes(group, topics) {
 function addMarks(studentsList, marksList) {
     let studentsMarks = [];
     for (let i = 0; i < studentsList.length; i++) {
-        studentsMarks[i] = new Array(studentsList[i], marksList[i]);
+        for (let j = 0; j < marksList.length; j++) {
+            studentsMarks[i] = new Array(studentsList[i], marksList[j]);
+        }
     }
     return studentsMarks;
 }
