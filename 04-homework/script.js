@@ -12,12 +12,12 @@ swapStudentsOrder(students, 1, 2);
 //console.log(students);
 
 function getPairs(arr) {
-    const studentPairs = [];
+    let studentPairs = [];
     for (let i = 0; i < arr.length; i+=2) {
         studentPairs.push(new Array(arr[i], arr[i+1]));
     }
     return studentPairs;
-  }
+}
 
 const pairs = getPairs(students);
 
