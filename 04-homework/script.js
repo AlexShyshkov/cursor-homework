@@ -27,8 +27,18 @@ function addThemes(group, topics) {
     return groupTopic;
 }
 
+function addMarks(studentsList, marksList) {
+    let studentsMarks = [];
+    for (let i = 0; i < studentsList.length; i++) {
+        studentsMarks[i] = new Array(studentsList[i], marksList[i]);
+    }
+    return studentsMarks;
+}
+
 const pairs = getPairs(students);
 const groupTheme = addThemes(pairs, themes);
+const groupMarks = addMarks(students, marks);
 
 console.log(pairs);
 console.log(groupTheme);
+console.log(groupMarks);
