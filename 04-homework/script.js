@@ -30,9 +30,7 @@ function addThemes(group, topics) {
 function addMarks(studentsList, marksList) {
     let studentsMarks = [];
     for (let i = 0; i < studentsList.length; i++) {
-        for (let j = 0; j < marksList.length; j++) {
-            studentsMarks[i] = new Array(studentsList[i], marksList[j]);
-        }
+            studentsMarks[i] = new Array(studentsList[i], marksList[i]);
     }
     return studentsMarks;
 }
