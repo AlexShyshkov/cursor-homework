@@ -68,6 +68,23 @@ function replaceBadWords(text, censored) {
                 .join(" ");
 }
 
+function divideByThree(word) {
+    if(word.length <=3) {
+        return word.toLowerCase();
+    } else {
+        let subStrings = [];
+        for(let i = 0; i < word.length; i += 3) {
+            subStrings.push(
+                word.toLowerCase()
+                    .split(" ")
+                    .join("")
+                    .substr(i, 3)
+                );
+        }
+        return subStrings;
+    }
+}
+
 console.log(getRandomArray(10, 2, 55));
 //console.log(getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
@@ -76,3 +93,4 @@ console.log(filterEvenNumbers(1, 2, 3, 4, 5));
 console.log(countPositiveNumbers(1, -3, 5, 6, -36));
 console.log(getDivideByFive(25, 5, 2, 9));
 console.log(replaceBadWords("Are you fucking kidding?", censoredWords));
+console.log(divideByThree("Commander"));
