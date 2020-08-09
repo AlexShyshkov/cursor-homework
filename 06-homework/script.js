@@ -52,6 +52,11 @@ function getStudentInfo(student) {
     return JSON.stringify(studentInfo);
 }
 
+function getStudentsNames(group) {
+    return group.map(studentName => studentName.name).sort();
+}
+
 console.log(getSubjects(students[0]));
 console.log(getAverageMark(students[0]));
 console.log(getStudentInfo(students[0]));
+console.log(getStudentsNames(students));
