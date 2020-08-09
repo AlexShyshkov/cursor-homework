@@ -43,5 +43,15 @@ function getAverageMark(student) {
     return averageMark.toFixed(2);
 }
 
+function getStudentInfo(student) {
+    let studentInfo = {
+        course: student.course,
+        name: student.name,
+        averageMark: getAverageMark(student)
+    };
+    return JSON.stringify(studentInfo);
+}
+
 console.log(getSubjects(students[0]));
 console.log(getAverageMark(students[0]));
+console.log(getStudentInfo(students[0]));
