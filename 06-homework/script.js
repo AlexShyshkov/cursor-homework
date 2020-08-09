@@ -27,7 +27,8 @@ const students = [{
 }];
 
 function getSubjects(student) {
-    return Object.keys(student.subjects).map(subject => subject.charAt(0).toUpperCase() + subject.substring(1));
+    return Object.keys(student.subjects)
+                 .map(subject => subject.charAt(0).toUpperCase() + subject.substring(1).replace("_", " "));
 }
 
 console.log(getSubjects(students[0]));
