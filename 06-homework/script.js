@@ -25,3 +25,9 @@ const students = [{
         cosmology: [5, 5, 5, 5]
     }
 }];
+
+function getSubjects(student) {
+    return Object.keys(student.subjects).map(subject => subject.charAt(0).toUpperCase() + subject.substring(1));
+}
+
+console.log(getSubjects(students[0]));
