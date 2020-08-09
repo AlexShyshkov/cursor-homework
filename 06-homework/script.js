@@ -31,4 +31,17 @@ function getSubjects(student) {
                  .map(subject => subject.charAt(0).toUpperCase() + subject.substring(1).replace("_", " "));
 }
 
+function getAverageMark(student) {
+    let marksOnSubjectsList = Object.values(student.subjects);
+    let totalMarksList = [];
+    let averageMark = 0;
+
+    for(let i = 0; i < marksOnSubjectsList.length; i++) {
+        totalMarksList = totalMarksList.concat(marksOnSubjectsList[i]);
+    }
+    averageMark = totalMarksList.reduce((a, b) => a + b) / totalMarksList.length;
+    return averageMark.toFixed(2);
+}
+
 console.log(getSubjects(students[0]));
+console.log(getAverageMark(students[0]));
