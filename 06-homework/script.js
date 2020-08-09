@@ -4,9 +4,9 @@ const students = [{
     name: "Tanya",
     course: 3,
     subjects: {
-        math: [4, 4, 3, 4],
-        algorithms: [3, 3, 3, 4, 4, 4],
-        data_science: [5, 5, 3, 4]
+        math: [4, 4, 3, 4, 10, 10],
+        algorithms: [3, 3, 3, 4, 4, 4, 5, 5, 5],
+        data_science: [5, 5, 3, 4, 5, 5, 5, 8]
     }
 }, {
     name: "Victor",
@@ -32,9 +32,9 @@ function getSubjects(student) {
 }
 
 function getAverageMark(student) {
-    let marksOnSubjectsList = Object.values(student.subjects);
-    let totalMarksList = [];
-    let averageMark = 0;
+    let marksOnSubjectsList = Object.values(student.subjects),
+        totalMarksList = [],
+        averageMark = 0;
 
     for(let i = 0; i < marksOnSubjectsList.length; i++) {
         totalMarksList = totalMarksList.concat(marksOnSubjectsList[i]);
@@ -56,7 +56,22 @@ function getStudentsNames(group) {
     return group.map(studentName => studentName.name).sort();
 }
 
+function getBestStudent(group) {
+    let bestStudent = null,
+        maxAverageMark = 0;
+
+    for(let i = 0; i < group.length; i++) {
+        if(maxAverageMark < getAverageMark(group[i])) {
+            maxAverageMark = getAverageMark(group[i]);
+            bestStudent = group[i].name;
+        }
+    }
+
+    return bestStudent;
+}
+
 console.log(getSubjects(students[0]));
 console.log(getAverageMark(students[0]));
 console.log(getStudentInfo(students[0]));
 console.log(getStudentsNames(students));
+console.log(getBestStudent(students));
