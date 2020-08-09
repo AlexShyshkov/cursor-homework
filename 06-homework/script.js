@@ -70,8 +70,25 @@ function getBestStudent(group) {
     return bestStudent;
 }
 
+function calculateWordLetters(text) {
+    let obj = {};
+    let keyWord = text.toLowerCase()
+                      .split("")
+                      .reverse();
+
+    for(let i = 0; i < keyWord.length; i++) {
+        if(keyWord[i] in obj) {
+            obj[keyWord[i]] += 1;
+        } else {
+            obj[keyWord[i]] = 1;
+        }
+    }
+    return obj;
+}
+
 console.log(getSubjects(students[0]));
 console.log(getAverageMark(students[0]));
 console.log(getStudentInfo(students[0]));
 console.log(getStudentsNames(students));
 console.log(getBestStudent(students));
+console.log(calculateWordLetters("testtytydgy"));
