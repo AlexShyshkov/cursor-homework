@@ -20,5 +20,10 @@ function getMyTaxes(salary) {
     return `My taxes = ${this.tax * salary}`;
 }
 
+function getMiddleTaxes() {
+    return `Middle tax = ${this.tax * this.middleSalary}`;
+}
+
 console.log(getMyTaxes.call(ukraine, 10000));
 console.log(getMyTaxes.call(litva, 10000));
+console.log(getMiddleTaxes.call(latvia));
