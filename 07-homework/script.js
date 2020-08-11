@@ -24,6 +24,13 @@ function getMiddleTaxes() {
     return `Middle tax = ${this.tax * this.middleSalary}`;
 }
 
+function getTotalTaxes() {
+    return `Total taxes from IT = ${this.tax * this.middleSalary * this.vacancies}`;
+}
+
 console.log(getMyTaxes.call(ukraine, 10000));
 console.log(getMyTaxes.call(litva, 10000));
 console.log(getMiddleTaxes.call(latvia));
+console.log(getTotalTaxes.call(ukraine));
+console.log(getTotalTaxes.call(litva));
+console.log(getTotalTaxes.call(latvia));
