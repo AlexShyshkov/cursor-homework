@@ -17,7 +17,7 @@ const litva = {
 };
 
 function getMyTaxes(salary) {
-    return `My taxes = ${this.tax * salary}`;
+    return this.tax * salary;
 }
 
 function getMiddleTaxes() {
@@ -28,9 +28,25 @@ function getTotalTaxes() {
     return `Total taxes from IT = ${this.tax * this.middleSalary * this.vacancies}`;
 }
 
+function getMySalary(country) {
+    setTimeout(() =>{
+        const salaryObj = {};
+        let salary = Math.round(Math.random()*(2000-1500+1)) + 1500,
+            profit = salary - getMyTaxes.call(country, salary);
+
+        salaryObj.salary = salary;
+        salaryObj.tax = getMyTaxes.call(country, salary);
+        salaryObj.profit = profit;
+        
+        console.log(salaryObj);
+    }, 1000);    
+}
+
 console.log(getMyTaxes.call(ukraine, 10000));
 console.log(getMyTaxes.call(litva, 10000));
 console.log(getMiddleTaxes.call(latvia));
 console.log(getTotalTaxes.call(ukraine));
 console.log(getTotalTaxes.call(litva));
 console.log(getTotalTaxes.call(latvia));
+
+getMySalary(litva);
