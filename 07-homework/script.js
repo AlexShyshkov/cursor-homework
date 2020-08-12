@@ -29,17 +29,17 @@ function getTotalTaxes() {
 }
 
 function getMySalary(country) {
-    setTimeout(() =>{
-        const salaryObj = {};
-        let salary = Math.round(Math.random()*(2000-1500+1)) + 1500,
-            profit = salary - getMyTaxes.call(country, salary);
+    const salaryObj = {};
+    let salary = Math.round(Math.random()*(2000-1500+1)) + 1500,
+        profit = salary - getMyTaxes.call(country, salary);
 
-        salaryObj.salary = salary;
-        salaryObj.tax = getMyTaxes.call(country, salary);
-        salaryObj.profit = profit;
-        
-        console.log(salaryObj);
-    }, 1000);    
+    salaryObj.salary = salary;
+    salaryObj.tax = getMyTaxes.call(country, salary);
+    salaryObj.profit = profit;
+    
+    console.log(salaryObj);
+   
+    setTimeout(getMySalary, 10000, country);
 }
 
 console.log(getMyTaxes.call(ukraine, 10000));
@@ -49,4 +49,4 @@ console.log(getTotalTaxes.call(ukraine));
 console.log(getTotalTaxes.call(litva));
 console.log(getTotalTaxes.call(latvia));
 
-getMySalary(litva);
+setTimeout(getMySalary, 10000, litva);
