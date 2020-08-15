@@ -6,4 +6,12 @@ class Student {
         this.course = course;
         this.fullName = fullName;
     }
+
+    getInfo() {
+        return `Student of ${this.course} course ${this.university}, ${this.fullName}`;
+    }
 }
+
+let vitya = new Student("Oxford", 2, " Vitya Alvarez");
+console.log(vitya);
+console.log(vitya.getInfo());
