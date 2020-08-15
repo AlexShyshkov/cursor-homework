@@ -17,7 +17,7 @@ const litva = {
 };
 
 function getMyTaxes(salary) {
-    return this.tax * salary;
+    return (this.tax * salary).toFixed(2);
 }
 
 function getMiddleTaxes() {
