@@ -19,6 +19,11 @@ class Student {
     set marks(newMark) {
         return this.marks.push(newMark);
     }
+
+    getAverageMark() {
+        return this.marks.reduce((accumulator, value) => accumulator + value) / this._marks.length
+                         .toFixed(2);
+    }
 }
 
 let vitya = new Student("Oxford", 2, " Vitya Alvarez");
@@ -27,3 +32,4 @@ console.log(vitya.getInfo());
 console.log(vitya.marks);
 console.log(vitya.marks = 5);
 console.log(vitya.marks);
+console.log(vitya.getAverageMark());
