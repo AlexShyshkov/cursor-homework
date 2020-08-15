@@ -52,6 +52,16 @@ class Student {
     }
 }
 
+class BudgetStudent extends Student {
+    constructor(university, course, fullName) {
+        super(university, course, fullName);
+
+        this._scholarship = 0;
+    }
+
+    
+}
+
 let vitya = new Student("Oxford", 2, " Vitya Alvarez");
 console.log(vitya);
 console.log(vitya.getInfo());
