@@ -25,7 +25,7 @@ function getMiddleTaxes() {
 }
 
 function getTotalTaxes() {
-    return `Total taxes from IT = ${this.tax * this.middleSalary * this.vacancies}`;
+    return this.tax * this.middleSalary * this.vacancies;
 }
 
 function getMySalary(country) {
