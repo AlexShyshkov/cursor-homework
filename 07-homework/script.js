@@ -21,7 +21,7 @@ function getMyTaxes(salary) {
 }
 
 function getMiddleTaxes() {
-    return `Middle tax = ${this.tax * this.middleSalary}`;
+    return this.tax * this.middleSalary;
 }
 
 function getTotalTaxes() {
