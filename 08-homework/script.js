@@ -41,6 +41,15 @@ class Student {
             console.log(`${this.fullName} dismissed`);
         }
     }
+
+    recoverStudent() {
+        if(this._isDismissed == true) {
+            this._isDismissed = false;
+            console.log(`${this.fullName} recovered`);
+        } else {
+            console.log(`${this.fullName} is not dismissed`);
+        }
+    }
 }
 
 let vitya = new Student("Oxford", 2, " Vitya Alvarez");
@@ -56,3 +65,7 @@ console.log(vitya._isDismissed);
 console.log(vitya.marks);
 console.log(vitya.marks = 5);
 console.log(vitya.marks);
+console.log(vitya.recoverStudent());
+console.log(vitya.marks);
+console.log(vitya.marks = 5);
+console.log(vitya.recoverStudent());
