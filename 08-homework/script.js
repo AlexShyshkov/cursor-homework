@@ -7,7 +7,7 @@ class Student {
         this.fullName = fullName;
 
         this._marks = [5, 4, 4, 5];
-        this._isDismissed = false;
+        this._isDismissed;
     }
 
     getInfo() {
@@ -15,11 +15,17 @@ class Student {
     }
 
     get marks() {
-        return this._marks;
+        if(!this._isDismissed) {
+            return this._marks;
+        } else {
+            return null;
+        }        
     }
 
     set marks(newMark) {
-        return this.marks.push(newMark);
+        if(!this._isDismissed) {
+            return this.marks.push(newMark);
+        }
     }
 
     getAverageMark() {
@@ -28,11 +34,11 @@ class Student {
     }
 
     dismissStudent() {
-        if (this._isDismissed == false) {
+        if (this._isDismissed == true) {
+            console.log(`${this.fullName} has alredy dismissed!`);            
+        } else {            
             this._isDismissed = true;
             console.log(`${this.fullName} dismissed`);
-        } else {
-            console.log(`${this.fullName} has alredy dismissed!`);
         }
     }
 }
@@ -46,3 +52,7 @@ console.log(vitya.marks);
 console.log(vitya.getAverageMark());
 console.log(vitya.dismissStudent());
 console.log(vitya.dismissStudent());
+console.log(vitya._isDismissed);
+console.log(vitya.marks);
+console.log(vitya.marks = 5);
+console.log(vitya.marks);
