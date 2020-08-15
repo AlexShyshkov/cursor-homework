@@ -59,7 +59,14 @@ class BudgetStudent extends Student {
         this._scholarship = 0;
     }
 
-    
+    getScholarship(sum) {
+        if(this.getAverageMark() >= 4.0 && !this._isDismissed) {
+            this._scholarship = sum;
+            console.log(`${this.fullName} received ${this._scholarship} scholarhip`);
+        } else {
+            console.log("Study better!");
+        }
+    }
 }
 
 let vitya = new Student("Oxford", 2, " Vitya Alvarez");
@@ -79,3 +86,10 @@ console.log(vitya.recoverStudent());
 console.log(vitya.marks);
 console.log(vitya.marks = 5);
 console.log(vitya.recoverStudent());
+
+let luke = new BudgetStudent("PTU", 1, "Luke Skyworker");
+console.log(luke);
+console.log(luke.getInfo());
+console.log(luke.marks);
+console.log(luke.getAverageMark());
+luke.getScholarship(1400);
