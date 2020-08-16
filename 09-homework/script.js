@@ -1,8 +1,8 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", function() {
-    function getRandomColour() {
-        
+    function getRandomColor() {
+        return '#' + Math.floor(Math.random()*16777215).toString(16);
     }
     
     function generateBlocks() {
@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function() {
         for (let i = 0; i < 25; i++) {
             let block = document.createElement('div');
             block.classList.add('block');
+            block.style.backgroundColor = getRandomColor();
             container.appendChild(block);
         }
     }
