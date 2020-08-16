@@ -13,10 +13,13 @@ window.addEventListener("DOMContentLoaded", function() {
         for (let i = 0; i < 25; i++) {
             let block = document.createElement('div');
             block.classList.add('block');
-            block.style.backgroundColor = getRandomColor();
+            setInterval(() => {
+                block.style.backgroundColor = getRandomColor();
+            }, 1000);
+            
             container.appendChild(block);
         }
     }
-    
+
     generateBlocks();
 });
