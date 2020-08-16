@@ -22,15 +22,4 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     generateBlocks();
-
-    /*let soundtrack = document.getElementById('soundtrack');
-
-    function playSoundtrack()
-    {
-        soundtrack.play();
-        soundtrack.volume = 0.4;
-        soundtrack.loop = false;
-    }
-
-    setTimeout(playSoundtrack,1000);*/
 });
