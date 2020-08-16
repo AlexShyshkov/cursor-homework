@@ -19,7 +19,7 @@ body{
 .block{
     height: 50px;
     width: 50px;
-    transition: 0.2s;
+    transition: 0.5s;
     border: 1px solid black;
     margin: 2px;
 }
