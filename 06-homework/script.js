@@ -49,7 +49,7 @@ function getStudentInfo(student) {
         name: student.name,
         averageMark: getAverageMark(student)
     };
-    return JSON.stringify(studentInfo);
+    return studentInfo;
 }
 
 function getStudentsNames(group) {
