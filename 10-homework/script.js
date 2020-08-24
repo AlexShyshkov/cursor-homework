@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function(){
         buttons.style.display = "block";
     });
 
-    document.addEventListener("mouseover", function(event) {
+    buttons.addEventListener("mouseover", function(event) {
         let target = event.target;
 
         let tooltipHtml = target.dataset.tooltip;
@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", function(){
         tooltip.style.top = top + "px";
     });
 
-    document.addEventListener("mouseout", function(e) {
+    buttons.addEventListener("mouseout", function(e) {
         if(tooltip) {
             tooltip.remove();
             tooltip = null;
