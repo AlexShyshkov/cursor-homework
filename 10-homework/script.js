@@ -3,8 +3,10 @@
 window.addEventListener("DOMContentLoaded", function(){
     let start = document.getElementById("start");
     let buttons = document.getElementById("buttons");
+    let icon = document.querySelectorAll(".buttons-panel__icon");
+    let audio = document.querySelectorAll("audio");
     let tooltip;
-    
+
     start.addEventListener("click", function(){
         start.style.display = "none";
         buttons.style.display = "block";
@@ -43,6 +45,28 @@ window.addEventListener("DOMContentLoaded", function(){
         if(tooltip) {
             tooltip.remove();
             tooltip = null;
+        }
+    });
+
+    for(let i = 0; i < icon.length; i++) {
+        icon[i].addEventListener("click", function() {
+            let key = this.id;
+            //audio[i].pause();
+            //audio[i].currentTime = 0;
+            audio[i].preload = "auto";
+            audio[i].volume = 0.2;
+            audio[i].play();
+        });
+    }
+
+    window.addEventListener("keypress", function(event) {
+        let key = event.keyCode;
+        for(let i = 0; i < icon.length; i++) {
+            if(icon[i].id == key) {
+                audio[i].preload = "auto";
+                audio[i].volume = 0.2;
+                audio[i].play();
+            }
         }
     });
 });
