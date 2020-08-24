@@ -1,0 +1,29 @@
+.main-panel{
+    background-color: white;
+    opacity: 0.4;
+    width: 400px;
+    height: 100px;
+    border: 2px solid olivedrab;
+    border-radius: 5px;    
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: 0.5s;
+    cursor: pointer;
+}
+.main-panel:hover{
+    opacity: 1;
+}
+.main-panel__text{
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+}
