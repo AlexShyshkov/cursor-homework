@@ -2,7 +2,9 @@
 
 window.addEventListener("DOMContentLoaded", function(){
 
-    document.getElementById("start").addEventListener("click", function(){
-        
-    })
+    let start = document.getElementById("start");
+    
+    start.addEventListener("click", function(){
+        start.style.display = "none";
+    });
 });
