@@ -1,0 +1,36 @@
+.buttons-panel{
+    display: none;
+    
+    height: 100px;
+    width: 700px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.buttons-panel__icon{
+    border: 2px solid olivedrab;
+    border-radius: 5px; 
+    box-sizing: border-box;
+    transition: 0.5s;
+        
+    position: relative;
+    display: inline-block;
+
+    height: 100%;
+    width: 17%;
+
+    margin-right: 2%;
+}
+.buttons-panel__icon:last-child{
+    margin-right: 0;
+}
+.buttons-panel__icon:hover{
+    cursor: pointer;
+}
+.icon{
+    height: 100%;
+    width: 100%;
+    background-color: chocolate;
+}
