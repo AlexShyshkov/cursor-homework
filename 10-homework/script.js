@@ -51,8 +51,7 @@ window.addEventListener("DOMContentLoaded", function(){
     for(let i = 0; i < icon.length; i++) {
         icon[i].addEventListener("click", function() {
             let key = this.id;
-            //audio[i].pause();
-            //audio[i].currentTime = 0;
+            audio[i].currentTime = 0;
             audio[i].preload = "auto";
             audio[i].volume = 0.2;
             audio[i].play();
@@ -61,9 +60,9 @@ window.addEventListener("DOMContentLoaded", function(){
 
     window.addEventListener("keypress", function(event) {
         let key = event.keyCode;
-        console.log(key);
         for(let i = 0; i < icon.length; i++) {
             if(icon[i].id == key) {
+                audio[i].currentTime = 0;
                 audio[i].preload = "auto";
                 audio[i].volume = 0.2;
                 audio[i].play();
