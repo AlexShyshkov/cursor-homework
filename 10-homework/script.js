@@ -48,13 +48,17 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     });
 
+    function setAudioSettings(item) {
+        item.currentTime = 0;
+        item.preload = "auto";
+        item.volume = 0.2;
+        item.play();
+    }
+
     for(let i = 0; i < icon.length; i++) {
         icon[i].addEventListener("click", function() {
             let key = this.id;
-            audio[i].currentTime = 0;
-            audio[i].preload = "auto";
-            audio[i].volume = 0.2;
-            audio[i].play();
+            setAudioSettings(audio[i]);            
         });
     }
 
@@ -62,10 +66,7 @@ window.addEventListener("DOMContentLoaded", function(){
         let key = event.keyCode;
         for(let i = 0; i < icon.length; i++) {
             if(icon[i].id == key) {
-                audio[i].currentTime = 0;
-                audio[i].preload = "auto";
-                audio[i].volume = 0.2;
-                audio[i].play();
+                setAudioSettings(audio[i]);
             }
         }
     });
