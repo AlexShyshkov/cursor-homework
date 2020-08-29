@@ -2,6 +2,7 @@
 
 function getRandomChinese(length) {
     let promiseStartTime = Date.now();
+
     return new Promise((resolve, reject) => {
         if(length <= 0) {
             reject("Length less then 0");
@@ -17,5 +18,5 @@ function getRandomChinese(length) {
     );
 }
 
-getRandomChinese(0);
+//getRandomChinese(0);
 getRandomChinese(4);
