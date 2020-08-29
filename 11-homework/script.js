@@ -1,10 +1,12 @@
 "use strict";
 
-function getRandomChinese() {
-    const sign = Date.now().toLocaleString("zh-Hans-CN-u-nu-hanidec").slice(-5);
-    //const text = String.fromCharCode(sign);
-    return sign;
+function getRandomChinese(length) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const sign = Date.now().toLocaleString("zh-Hans-CN-u-nu-hanidec").slice(-5);
+            resolve(console.log(sign));
+        }, length * 50);
+    });    
 }
 
-//getRandomChinese(4);
-console.log(getRandomChinese());
+getRandomChinese(4);
