@@ -57,7 +57,12 @@ window.addEventListener("DOMContentLoaded", function(){
 
     for(let i = 0; i < icon.length; i++) {
         icon[i].addEventListener("click", function() {
-            let key = this.id;
+           // console.log(this);
+            console.log(icon[i].id);
+            console.log(this.id);
+            if(icon[i].id != this.id){
+                audio[i].pause();
+            }
             setAudioSettings(audio[i]);            
         });
     }
