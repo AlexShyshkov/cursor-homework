@@ -18,6 +18,8 @@
     align-items: center;
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 54px;
+
+    transition: 0.5s;
 }
 .start:hover{
     cursor: pointer;

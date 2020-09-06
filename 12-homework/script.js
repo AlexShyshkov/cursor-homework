@@ -2,17 +2,24 @@
 
 window.addEventListener("DOMContentLoaded", function(){
     let start = document.getElementById("start");
+    let crawl = document.getElementById("sw");
 
-    function playSwordSound(){
-        let sword = document.createElement("audio");
-        sword.src = "src/sound/sword.mp3";
-        sword.currentTime = 0;
-        sword.volume = 0.3;
-        sword.play();
+    function playSound(path){
+        let sound = document.createElement("audio");
+        sound.currentTime = 0;
+        sound.volume = 0.3;
+        sound.src = `src/sound/${path}`;
+        sound.play();
     }
 
+    function initApp(){
+        start.style.display = "none";
+        crawl.style.display = "flex";
+        playSound("main.mp3");
+    }
 
-
-    start.addEventListener("mouseover", playSwordSound);
-    
+    start.addEventListener("mouseover", () => {
+        playSound("sword.mp3");
+    });
+    start.addEventListener("click", initApp);
 });
