@@ -65,6 +65,9 @@ window.addEventListener("DOMContentLoaded", function(){
     window.addEventListener("keypress", function(event) {
         let key = event.keyCode;
         for(let i = 0; i < icon.length; i++) {
+            if(icon[i].id != key) {
+                audio[i].pause();
+            }
             if(icon[i].id == key) {
                 setAudioSettings(audio[i]);
             }
