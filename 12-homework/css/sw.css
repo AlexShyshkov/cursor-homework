@@ -13,7 +13,6 @@ body {
     z-index: 1;
 }
 .star-wars {
-   /* display: flex;*/
     display: none;
     justify-content: center;
     position: relative;
@@ -43,7 +42,7 @@ body {
 }
 @keyframes crawl {
     0% {
-    top: -100px;
+    top: -300px;
     transform: rotateX(20deg)  translateZ(0);
     }
         100% { 

@@ -1,0 +1,44 @@
+.info-panel{
+    height: 100px;
+    width: 90%;
+
+    border: 4px solid #feda4a;
+    border-radius: 5px;
+
+    position: fixed;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -1%);
+
+    z-index: 10;
+
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.7s;
+}
+.info-button__character,
+.info-button__palnet,
+.info-film__label{
+    color: #feda4a;
+    font-size: 24px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-button__character,
+.info-button__palnet{
+    height: 80%;
+    width: 200px;
+
+    border: 1px solid #feda4a;
+    border-radius: 5px;
+
+    margin-right: 5%;
+
+    cursor: pointer;
+}
