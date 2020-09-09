@@ -32,6 +32,23 @@ window.addEventListener("DOMContentLoaded", function(){
         }, 40000);
     }
 
+    function renderPlanets(planet) {
+
+    }
+
+    function getPlanets() {
+        let config = {
+            method: "GET",
+            url: BASE + "planets/",
+        };
+
+        return axios(config)
+                .then((response) => {
+                    return renderPlanets(response.data.result);
+                })
+                .catch(error => console.log("Error in planet rendering"));
+    }
+
     start.addEventListener("click", initApp);
     hero.addEventListener("mouseover", () => {
         playSound("sword.mp3");
@@ -45,4 +62,6 @@ window.addEventListener("DOMContentLoaded", function(){
     next.addEventListener("mouseover", () => {
         playSound("sword.mp3");
     });
+
+    planet.addEventListener("click", getPlanets);
 });
