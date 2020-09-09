@@ -21,7 +21,8 @@
 }
 .info-button__character,
 .info-button__palnet,
-.info-film__label{
+.info-film__label,
+.pagination{
     color: #feda4a;
     font-size: 24px;
     font-weight: bold;
@@ -41,4 +42,9 @@
     margin-right: 5%;
 
     cursor: pointer;
+}
+.pagination,
+.info-film__label,
+.info-film__input{
+    margin-right: 5%;
 }

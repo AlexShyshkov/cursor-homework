@@ -1,11 +1,15 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", function(){
+    const BASE = "https://swapi.dev/api/";
+
     let start = document.getElementById("start");
     let crawl = document.getElementById("sw");
     let infoPanel = document.getElementById("info");
     let hero = document.getElementById("hero");
     let planet = document.getElementById("planet");
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
 
     function playSound(path){
         let sound = document.createElement("audio");
@@ -33,6 +37,12 @@ window.addEventListener("DOMContentLoaded", function(){
         playSound("sword.mp3");
     });
     planet.addEventListener("mouseover", () => {
+        playSound("sword.mp3");
+    });
+    prev.addEventListener("mouseover", () => {
+        playSound("sword.mp3");
+    });
+    next.addEventListener("mouseover", () => {
         playSound("sword.mp3");
     });
 });
