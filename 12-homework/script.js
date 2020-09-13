@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", function(){
     let infoPanel = document.getElementById("info");
     let hero = document.getElementById("hero");
     let planet = document.getElementById("planet");
+    let film = document.getElementById("film");
     let prev = document.getElementById("prev");
     let next = document.getElementById("next");
 
@@ -34,8 +35,23 @@ window.addEventListener("DOMContentLoaded", function(){
         }, 40000);
     }
 
-    function renderGero() {
+    function renderHeroList(actors) {
+        let heroesList = document.querySelector(".hero-info");
+        heroesList.innerHTML = "";
 
+        actors.forEach(actor => {
+            let heroesListItem = document.createElement("div");
+            heroesListItem.className = ".hero-list__item";
+            heroesListItem.innerHTML = `
+                <div class="hero-image>
+                    <img src="${actor.photo}">
+                </div>
+                <div class="char_name">${actor.name}</div>
+                <div class="char_birth">${actor.birth_year}</div>
+                <div class="char_gender">${actor.gender}</div>
+            `;
+            heroesListItem.append(heroesListItem);
+        });
     }
 
     function getInfo() {
