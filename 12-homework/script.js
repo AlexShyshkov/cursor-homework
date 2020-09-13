@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded", function(){
     let prev = document.getElementById("prev");
     let next = document.getElementById("next");
 
+    let currentPage = 1;
+
     function playSound(path){
         let sound = document.createElement("audio");
         sound.currentTime = 0;
@@ -24,7 +26,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
     function initApp(){
         start.style.display = "none";
-       // crawl.style.display = "flex";
+        crawl.style.display = "flex";
         playSound("main.mp3");
 
         setTimeout(() => {
@@ -33,13 +35,13 @@ window.addEventListener("DOMContentLoaded", function(){
     }
 
     function renderPlanetsList(planets) {
-        let planetsList = document.querySelector(".planets");
+        let planetsList = document.querySelector(".planets-list");
         planetsList.innerHTML = "";
 
         planets.forEach(planet => {
             let planetsListItem = document.createElement("div");
             planetsListItem.className = ".planet-list__item";
-            planetsListItem.innerHTML = `<p>${planet.name}</p>`;
+            planetsListItem.innerHTML = `<h3 class="item-text">${planet.name}</h3>`;
 
             planetsList.append(planetsListItem);
         });
@@ -50,15 +52,14 @@ window.addEventListener("DOMContentLoaded", function(){
             method: "GET",
             url: `${BASE}planets/`,
             params: {
-                page: page
+                page: currentPage
             },
         };
-
         return axios(config)
-                .then((response) => {
-                    return renderPlanetsList(response.data.result);
+                .then((res) =>{
+                    return renderPlanetsList(res.data.results);
                 })
-                .catch(error => console.log("Error in planet rendering"));
+                .catch(err => alert('Something went wrong!'));
     }
 
     start.addEventListener("click", initApp);

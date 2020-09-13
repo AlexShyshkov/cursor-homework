@@ -1,0 +1,20 @@
+.planet-info{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    /*border: 2px solid #feda4a;*/
+}
+/*.planets-list{
+    z-index: 10;
+}*/
+.planet-list__item{
+    text-align: center;
+    cursor: pointer;
+}
+.item-text{
+    color: #feda4a;
+    font-weight: bold;
+    font-size: 24px;
+}
