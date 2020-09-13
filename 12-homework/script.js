@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
     function initApp(){
         start.style.display = "none";
-        crawl.style.display = "flex";
+       // crawl.style.display = "flex";
         playSound("main.mp3");
 
         setTimeout(() => {
@@ -32,19 +32,31 @@ window.addEventListener("DOMContentLoaded", function(){
         }, 40000);
     }
 
-    function renderPlanets(planet) {
+    function renderPlanetsList(planets) {
+        let planetsList = document.querySelector(".planets");
+        planetsList.innerHTML = "";
 
+        planets.forEach(planet => {
+            let planetsListItem = document.createElement("div");
+            planetsListItem.className = ".planet-list__item";
+            planetsListItem.innerHTML = `<p>${planet.name}</p>`;
+
+            planetsList.append(planetsListItem);
+        });
     }
 
     function getPlanets() {
         let config = {
             method: "GET",
-            url: BASE + "planets/",
+            url: `${BASE}planets/`,
+            params: {
+                page: page
+            },
         };
 
         return axios(config)
                 .then((response) => {
-                    return renderPlanets(response.data.result);
+                    return renderPlanetsList(response.data.result);
                 })
                 .catch(error => console.log("Error in planet rendering"));
     }
