@@ -34,6 +34,14 @@ window.addEventListener("DOMContentLoaded", function(){
         }, 40000);
     }
 
+    function renderGero() {
+
+    }
+
+    function getInfo() {
+
+    }
+
     function renderPlanetsList(planets) {
         let planetsList = document.querySelector(".planets-list");
         planetsList.innerHTML = "";
@@ -76,6 +84,8 @@ window.addEventListener("DOMContentLoaded", function(){
     next.addEventListener("mouseover", () => {
         playSound("sword.mp3");
     });
+
+    hero.addEventListener("click", getInfo);
 
     planet.addEventListener("click", getPlanets);
 
