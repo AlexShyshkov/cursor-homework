@@ -46,9 +46,9 @@ window.addEventListener("DOMContentLoaded", function(){
                 <div class="hero-image>
                     <img src="${actor.photo}">
                 </div>
-                <div class="char_name">${actor.name}</div>
-                <div class="char_birth">${actor.birth_year}</div>
-                <div class="char_gender">${actor.gender}</div>
+                <div class="hero-name">${actor.name}</div>
+                <div class="hero-birth">${actor.birth_year}</div>
+                <div class="hero-gender">${actor.gender}</div>
             `;
             heroesListItem.append(heroesListItem);
         });
