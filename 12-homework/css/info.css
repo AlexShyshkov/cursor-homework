@@ -48,3 +48,6 @@
 .info-film__input{
     margin-right: 5%;
 }
+.pagination{
+    cursor: pointer;
+}

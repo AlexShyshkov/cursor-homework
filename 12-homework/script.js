@@ -55,11 +55,12 @@ window.addEventListener("DOMContentLoaded", function(){
                 page: currentPage
             },
         };
+        
         return axios(config)
-                .then((res) =>{
-                    return renderPlanetsList(res.data.results);
+                .then((response) =>{
+                    return renderPlanetsList(response.data.results);
                 })
-                .catch(err => alert('Something went wrong!'));
+                .catch(error => console.log("error in rendering"));
     }
 
     start.addEventListener("click", initApp);
@@ -77,4 +78,20 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     planet.addEventListener("click", getPlanets);
+
+    next.addEventListener("click", () => {
+        if(currentPage >= 6) {
+            return;
+        } else {
+            getPlanets(++currentPage);
+        }
+    });
+
+    prev.addEventListener("click", () => {
+        if(currentPage <= 1) {
+            return;
+        } else {
+            getPlanets(--currentPage);
+        }
+    });
 });
