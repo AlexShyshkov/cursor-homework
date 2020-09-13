@@ -5,3 +5,17 @@
     transform: translate(-50%, -50%);
     z-index: 10;
 }
+.hero-list__item{
+    cursor: pointer;
+}
+.hero-image{
+    width: 70px;
+    height: 70px;
+}
+.hero-name,
+.hero-birth,
+.hero-gender{
+    color: #feda4a;
+    font-weight: bold;
+    font-size: 24px;
+}
