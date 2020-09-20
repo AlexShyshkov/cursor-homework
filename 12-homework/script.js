@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function(){
     let infoPanel = document.getElementById("info");
     let hero = document.getElementById("hero");
     let planet = document.getElementById("planet");
-    let film = document.getElementById("film");
+    //let film = document.getElementById("film").value;
     let prev = document.getElementById("prev");
     let next = document.getElementById("next");
 
@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function(){
     }
 
     function renderHeroList(actors) {
-        let heroesList = document.querySelector(".hero-info");
+        let heroesList = document.querySelector(".characters-list");
         heroesList.innerHTML = "";
 
         actors.forEach(actor => {
@@ -50,12 +50,30 @@ window.addEventListener("DOMContentLoaded", function(){
                 <div class="hero-birth">${actor.birth_year}</div>
                 <div class="hero-gender">${actor.gender}</div>
             `;
-            heroesListItem.append(heroesListItem);
+            heroesList.append(heroesListItem);
         });
     }
 
     function getInfo() {
-
+        let filmId = document.getElementById("film").value;
+        console.log(filmId);
+        document.querySelector(".hero-info").style.display = "block";
+        const chars = [];
+    
+        return axios.get(`${BASE}films/${filmId}/`)
+                    .then(film => {
+                            return film.data.characters;
+                        })
+                    .then(characters => {
+                        characters.forEach(char => {
+                            return axios.get('https' + char.substr(4,char.length))
+                                        .then(char => {
+                                            char.data.photo = `src/image/${parseInt((char.data.url).match(/\d+/))}.png`;
+                                            chars.push(char.data);
+                                            renderHeroList(chars);
+                                        });
+                                    });
+                                });
     }
 
     function renderPlanetsList(planets) {
@@ -84,7 +102,7 @@ window.addEventListener("DOMContentLoaded", function(){
                 .then((response) =>{
                     return renderPlanetsList(response.data.results);
                 })
-                .catch(error => console.log("error in rendering"));
+                .catch(() => console.log("error in rendering of planets"));
     }
 
     start.addEventListener("click", initApp);

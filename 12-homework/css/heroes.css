@@ -1,11 +1,30 @@
 .hero-info{
+    display: none;
+    width: 90%;
+    height: 75%;
+    border: 2px solid #feda4a;
+    
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
+    
     z-index: 10;
 }
+.characters-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 2px;
+}
 .hero-list__item{
+    height: 400px;
+    width: 400px;
+
+    border: 2px solid #feda4a;
+    margin: 20px;
+
     cursor: pointer;
 }
 .hero-image{
@@ -17,5 +36,5 @@
 .hero-gender{
     color: #feda4a;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
 }
